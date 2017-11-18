@@ -1,25 +1,71 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>mainPack</groupId>
-  <artifactId>TestSiteQaLight</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <!-- The Basic -->
+    <!-- groupId    - name of organization  -->
+    <!-- artifactId - name of project       -->
+    <!-- SNAPSHOT  - means that change that version
+                     in development and the resulting jar file can change. -->
+    <!-- name - name of project for a person -->
+    <!-- url - site of project -->
 
-  <name>TestSiteQaLight</name>
-  <url>http://maven.apache.org</url>
+    <groupId>mainPack</groupId>
+    <artifactId>TestSiteQaLight</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>TestSiteQaLight</name>
+    <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+
+    <!-- dependencies - Here is a list of all the libraries
+                        that are used in the project.-->
+    <!-- scope - specifies what the library is used for-->
+
+    <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <!-- build - This section contains information on the assembly itself:
+                 where are the source files, where are the resources,
+                 which plugins are used. -->
+
+    <!-- sourceDirectory - determines where maven will take the source files.
+                          The default is src / main / java, but you can determine
+                          where it suits you best. The directory can be only one
+                          (without the use of special plug-ins)-->
+
+    <!-- resources - nested <resource> tags define one or more directories
+                     where resource files are stored. Resources, unlike source files,
+                     are simply copied when you build them. Default directory
+                     src / main / resources -->
+
+    <!-- outputDirectory - определяет, в какую директорию компилятор будет сохранять
+                            результаты компиляции - *.class файлы.
+                            Значение по умолчанию - target/classes -->
+
+    <!-- finalName -  the name of the resulting jar (war, ear ..)
+                      file with the corresponding type of extension,
+                      which is created in the package phase.
+                      The default value is artifactId-version. -->
 </project>
