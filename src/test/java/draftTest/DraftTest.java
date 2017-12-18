@@ -53,24 +53,24 @@ public class DraftTest {
         //4 -поиск элемента по локатору (By.xpath) и нажатие клавиши (.click)
         driver.findElement(By.name("station_from")).sendKeys("Киев");
         driver.findElement(By.xpath(".//*[@class='ui-menu-item ui-state-focus']" +
-                                    " [contains(text(),'Киев')]")).click();
+                " [contains(text(),'Киев')]")).click();
         driver.findElement(By.name("station_till")).sendKeys("Ивано-Франковск");
         driver.findElement(By.xpath(".//*[@class='ui-menu-item ui-state-focus']" +
-                                    " [contains(text(),'Ивано-Франковск')]")).click();
+                " [contains(text(),'Ивано-Франковск')]")).click();
 
 
         /** online reservation page - checkbox "Туда и обратно"*/
         //1 -поиск элемента по имени (By.name) и нажатие клавиши (.click)
-       // driver.findElement(By.name("round_trip")).click();
+        // driver.findElement(By.name("round_trip")).click();
 
 
         /** online reservation page - input "Дата отправления"*/
         //1 -поиск элемента по локатору (By.xpath) и нажатие клавиши (.click)
         //2 -поиск элемента по локатору (By.xpath) и нажатие клавиши (.click)
         driver.findElement(By.xpath(".//input[@id='date_dep']")).click();
-       // driver.findElement(By.xpath(".//*[@class='ui-datepicker-group ui-datepicker-group-first']//a[text()='23']")).click();
-        driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/div[2]/table/tbody/tr[2]/td[4]/a")).click();
-
+        driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']" +
+                "//table//td[@data-month='0' and  @data-year='2018' ]" +
+                " //a[@class='ui-state-default' and text()='10']")).click();
 
         Thread.sleep(1000);
 
@@ -86,11 +86,6 @@ public class DraftTest {
         /** online reservation page - select "Выбор поезда и класса места (плацкарт-купе)"*/
         //1 -поиск элемента по локатору (By.xpath) и нажатие клавиши (.click)
         driver.findElement(By.xpath(".//*[@id='ts_res_tbl']/tbody/tr[4]/td[6]/div[3]/button")).click();
-
-
-
-
-
 
 
         Thread.sleep(10000);
